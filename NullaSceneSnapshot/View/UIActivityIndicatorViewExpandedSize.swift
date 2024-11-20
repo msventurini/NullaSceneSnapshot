@@ -26,13 +26,9 @@ class UIActivityIndicatorViewExpandedSize: UIView {
         addSubview(ativityIndicatorView)
         
         NSLayoutConstraint.activate([
-            
             ativityIndicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             ativityIndicatorView.centerYAnchor.constraint(equalTo: centerYAnchor)
-            
-            
         ])
-        
     }
     
     required init?(coder: NSCoder) {

@@ -27,10 +27,13 @@ import SceneKit.ModelIO
     
     var firstStageImage: UIImage?
     var secondStageImage: UIImage?
-    
     var stageSelectionImageLoadingWasDone: Bool = false
 
     var debugInfo: DebugInfo
+    
+    var viewSize: CGSize? = nil
+    
+    var isLoading: Bool = true
     
     init(firstStageImage: UIImage? = nil, secondStageImage: UIImage? = nil) {
         
@@ -49,7 +52,7 @@ import SceneKit.ModelIO
         
     }
     
-    func getImage(forStage stage: NullaStageEnum) -> UIImage {
+    func getUIImage(forStage stage: NullaStageEnum) -> UIImage {
         switch stage {
         case .firstStage:
             
@@ -64,6 +67,12 @@ import SceneKit.ModelIO
             }
             return secondStageImage
         }
+    }
+    
+    func getImage(forStage stage: NullaStageEnum) -> Image {
+        
+        return Image(uiImage: getUIImage(forStage: stage))
+        
     }
     
     func setImage(forStage stage: NullaStageEnum, image: UIImage?) {

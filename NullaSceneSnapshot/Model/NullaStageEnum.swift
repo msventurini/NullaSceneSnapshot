@@ -23,7 +23,7 @@ enum NullaStageEnum: Int, Identifiable, Hashable, CaseIterable {
         case .firstStage:
             return "Nulla-Idle"
         case .secondStage:
-            return "Arvore3dForUI"
+            return "Semente"
         }
     }
     
