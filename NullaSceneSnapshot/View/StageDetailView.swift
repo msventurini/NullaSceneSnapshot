@@ -9,11 +9,20 @@
 import SwiftUI
 import SceneKit.ModelIO
 
-struct StageDetailView: View {
+struct StageDetailView: View {    
+    @Environment(\.stageSelectAssets) var stageSelectAssets
+
     let stage: NullaStageEnum
 
     var body: some View {
-        Text(stage.rawValue.description)
-            .font(.largeTitle)
+        stageSelectAssets.getImage(forStage: stage)
+            .resizable()
+            .scaledToFit()
     }
+}
+
+#Preview(traits: .modifier(PreviewHelper())) {
+    
+    StageDetailView(stage: .firstStage)
+    
 }

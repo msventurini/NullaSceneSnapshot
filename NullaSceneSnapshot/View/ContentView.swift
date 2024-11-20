@@ -15,11 +15,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(NullaStageEnum.allCases) { stage in
-                NavigationLink(stage.rawValue.description) {
+                NavigationLink(stage.stageTitle) {
                     StageDetailView(stage: stage)
+                        .navigationTitle(stage.stageTitle)
                 }
+                .navigationTitle("Stage Select")
             }
         }
+        .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 

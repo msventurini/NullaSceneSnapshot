@@ -12,8 +12,6 @@ import SceneKit
 struct StageSelectImagesEnvironmentAssets: ViewModifier {
     
     @Environment(\.displayScale) var displayScale: CGFloat
-
-    
     @State var stageSelectImageAssets: StageSelectImageAssets = StageSelectImageAssets()
     
     func body(content: Content) -> some View {
@@ -39,6 +37,7 @@ struct StageSelectImagesEnvironmentAssets: ViewModifier {
                 }
         } else {
             content
+                .environment(\.stageSelectAssets, stageSelectImageAssets)
         }
         
     }

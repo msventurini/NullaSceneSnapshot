@@ -27,6 +27,15 @@ enum NullaStageEnum: Int, Identifiable, Hashable, CaseIterable {
         }
     }
     
+    var stageTitle: String {
+        switch self {
+        case .firstStage:
+            return "First Stage"
+        case .secondStage:
+            return "Second Stage"
+        }
+    }
+    
     var fileExtension: String {
         return "usdz"
     }
